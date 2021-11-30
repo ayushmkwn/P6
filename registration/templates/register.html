@@ -1,0 +1,17 @@
+<center>
+    <h1> Registration Page </h1>
+
+    {% if message %}
+        <br><br>
+        <strong>{{ message }}</strong>
+        <br><br>
+    {% endif %}
+
+    {% if form %}
+        <form action="{% url "register" %}" method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit"> Register </button>
+        </form>
+    {% endif %}
+</center>

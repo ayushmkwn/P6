@@ -1,0 +1,20 @@
+<center>
+<h1>
+    Registration using Abstract Base User 
+</h1>
+<br>
+{% if message %}
+        <br><br>
+        <strong>{{ message }}</strong>
+        <br><br>
+{% endif %}
+
+{% if obj.is_authenticatedd %}
+    <h2> Hey, {{ obj.name }}!</h2>
+    <a href="{% url "signout" %}"> Logout </a>
+{% else %}
+<h3><a href="{% url "register" %}"> Registration </a> </h3>
+<br>
+<h3><a href="{% url "signin" %}"> Login </a> </h3>
+{% endif %}
+</center>
